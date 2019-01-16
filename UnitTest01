@@ -1,0 +1,65 @@
+/**
+ * @param <T>
+ */
+public abstract class ILinkedList<T> {
+    /**
+     * Get the next list element
+     * @return the next element
+     */
+    public abstract ILinkedList<T> next();
+
+    /**
+     * Gets the last element in the list
+     * @return the node at the end of the list
+     */
+    public abstract ILinkedList<T> last();
+
+    /**
+     * Get the element n elements down the list
+     * @param n the number of elements to skip
+     * @return the element n away
+     */
+    public abstract ILinkedList<T> after(int n);
+
+    /**
+     * Removes the next element (sets null)
+     * @return the previously next element
+     */
+    public abstract ILinkedList<T> detach();
+
+    /**
+     * Gets the current value
+     * @return the current value
+     */
+    public abstract T get();
+
+    /**
+     * Sets the value of this node
+     * @param value the new value
+     */
+    public abstract void set(T value);
+
+    /**
+     * Sets the next element in the list
+     * @param next the next element
+     *
+     * Example: (1->2->3).setNext(4) => 1->4
+     */
+    public abstract void setNext(ILinkedList<T> next);
+
+    /**
+     * Sets the next element after this current element
+     * @param next the next element
+     *
+     * Example: (1->2->3).appnd(4) => 1->2->3->4
+     */
+    public abstract void append(ILinkedList<T> next);
+
+    /**
+     * Adds the current list as the next of newFirst
+     * @param newFirst the new head of the list
+     *
+     * Example: (1->2->3).insert(4) => 4->1->2->3
+     */
+    public abstract void insert(ILinkedList<T> newFirst);
+}
